@@ -6,12 +6,19 @@ import { LedService } from 'app/shared/led.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+
+/**
+ * The dashboard.
+ */
 export class DashboardComponent implements OnInit {
 
   colors: string[];
 
   constructor(private service: LedService) { }
 
+  /**
+   * Do on init.
+   */
   ngOnInit() {
     // this.colors = ['red', 'green', 'blue', 'yellow', 'orange', 'blue', 'pink', 'purple'];
     this.service.getColors().subscribe(colors => this.colors = colors);
