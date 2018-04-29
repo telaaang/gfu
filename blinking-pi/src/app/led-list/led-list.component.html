@@ -1,0 +1,8 @@
+<p>
+  led-list works!
+</p>
+<ol>
+  <li *ngFor="let c of colors; let i = index;">    
+    <pi-led [color]="c" [index]="i" (colorSelected)="handleColorSelected($event)"></pi-led>
+  </li>
+</ol>

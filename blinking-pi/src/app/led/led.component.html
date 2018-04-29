@@ -1,0 +1,10 @@
+<p>
+  {{index}}
+</p>
+<div class="box" [style.backgroundColor]="color" (click)="handleClick($event)">
+    {{color | piColor:format | uppercase}}
+</div>
+<!-- nicht von Angular verwendete Variante zum routing... -->
+<a [routerLink]="['/leds', index]" *ngIf="false">
+  Display led
+</a>

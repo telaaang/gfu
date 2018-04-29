@@ -1,0 +1,15 @@
+<p>
+  color-input works with color {{color}}
+</p>
+<form #piForm="ngForm" (ngSubmit)="setColor(piForm.value.inputColor)">
+  <input type="text" required [minlength]="minLength" name="inputColor" [(ngModel)]="color" #piColor="ngModel" >
+
+  <p [hidden]="!piColor.errors?.required">
+    Please enter a value.
+  </p>
+  <p [hidden]="!piColor.errors?.minlength">
+    Please enter at least {{minLength}} characters.
+  </p>
+
+  <button type="submit" [disabled]="piForm.invalid">Set color</button>
+</form>
